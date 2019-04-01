@@ -1,0 +1,581 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<sbml xmlns="http://www.sbml.org/sbml/level3/version1/core" level="3" version="1">
+  <model name="SongDenitrification" id="SongDenitrification">
+    <listOfUnitDefinitions>
+      <unitDefinition name="mmol_gDW_hr" id="kbase_flux">
+        <listOfUnits>
+          <unit scale="-3" kind="mole"/>
+          <unit kind="gram" exponent="-1"/>
+          <unit kind="second" multiplier="0.00027777" exponent="-1"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition name="mM" id="mM">
+        <listOfUnits>
+          <unit scale="-3" kind="mole"/>
+          <unit kind="litre" exponent="-1"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition name="pmol_gSoil" id="Enzyme">
+        <listOfUnits>
+          <unit scale="-12" kind="mole"/>
+          <unit kind="gram" exponent="-1"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition name="Songk_i" id="ki">
+        <listOfUnits>
+          <unit scale="-3" kind="mole"/>
+          <unit kind="litre" exponent="-1"/>
+          <unit exponent="-1"/>
+          <unit kind="second" multiplier="1.1574E-5" exponent="-1"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition name="kdeg_unit" id="mmol_mmolBM_d">
+        <listOfUnits>
+          <unit scale="-3" kind="mole"/>
+          <unit scale="-3" kind="mole" exponent="-1"/>
+          <unit kind="second" multiplier="1.1574E-5" exponent="-1"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition name="perDay" id="perDay">
+        <listOfUnits>
+          <unit kind="second" multiplier="1.1574E-5" exponent="-1"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="mM_Day">
+        <listOfUnits>
+          <unit scale="-3" kind="mole"/>
+          <unit kind="litre" exponent="-1"/>
+          <unit kind="second" multiplier="1.1574E-5" exponent="-1"/>
+        </listOfUnits>
+      </unitDefinition>
+    </listOfUnitDefinitions>
+    <listOfCompartments>
+      <compartment id="extracellular"/>
+      <compartment id="cytosol"/>
+    </listOfCompartments>
+    <listOfSpecies>
+      <species compartment="extracellular" name="H2O_e" boundaryCondition="true" constant="false" id="cpd00001_e"/>
+      <species boundaryCondition="false" constant="false" compartment="extracellular" name="CO2_e" id="cpd00011_e" initialConcentration="1"/>
+      <species compartment="extracellular" name="NH4_e" boundaryCondition="false" constant="false" id="cpd00013_e"/>
+      <species boundaryCondition="false" constant="false" compartment="extracellular" name="CH2O_e" id="cpd00055_e" initialConcentration="61.13"/>
+      <species boundaryCondition="false" constant="false" compartment="extracellular" name="H+_e" id="cpd00067_e" initialConcentration="0.001"/>
+      <species boundaryCondition="false" constant="false" compartment="extracellular" name="NO2_e" id="cpd00075_e" initialConcentration="0"/>
+      <species boundaryCondition="false" constant="false" compartment="extracellular" name="NO3_e" id="cpd00209_e" initialConcentration="18.25"/>
+      <species boundaryCondition="false" constant="false" compartment="extracellular" name="N2_e" id="cpd00528_e" initialConcentration="0"/>
+      <species boundaryCondition="false" constant="false" compartment="extracellular" name="Biomass" id="cpd11416_e" initialConcentration="0.1"/>
+      <species compartment="cytosol" name="H2O_c" boundaryCondition="true" constant="false" id="cpd00001_c"/>
+      <species compartment="extracellular" name="CO2_c" boundaryCondition="false" constant="false" id="cpd00011_c"/>
+      <species compartment="cytosol" name="NH4_c" boundaryCondition="false" constant="false" id="cpd00013_c"/>
+      <species compartment="cytosol" name="CH2O_c" boundaryCondition="false" constant="false" id="cpd00055_c"/>
+      <species compartment="cytosol" name="H+_c" boundaryCondition="false" constant="false" id="cpd00067_c"/>
+      <species compartment="cytosol" name="NO2_c" boundaryCondition="false" constant="false" id="cpd00075_c"/>
+      <species compartment="cytosol" name="NO3_c" boundaryCondition="false" constant="false" id="cpd00209_c"/>
+      <species compartment="cytosol" name="N2_c" boundaryCondition="false" constant="false" id="cpd00528_c"/>
+      <species boundaryCondition="false" constant="false" compartment="cytosol" name="InternalResource1" id="int1" initialConcentration="0.001"/>
+      <species boundaryCondition="false" constant="false" compartment="cytosol" name="InternalResource2" id="int2" initialConcentration="0.001"/>
+      <species boundaryCondition="false" constant="false" compartment="cytosol" name="Transcript1" id="Trans1" initialConcentration="0.001"/>
+      <species boundaryCondition="false" constant="false" compartment="cytosol" name="Transcript2" id="Trans2" initialConcentration="0.001"/>
+      <species boundaryCondition="false" constant="false" compartment="cytosol" name="Enzyme1" id="e1" initialConcentration="0.001"/>
+      <species boundaryCondition="false" constant="false" compartment="cytosol" name="Enzyme2" id="e2" initialConcentration="0.001"/>
+    </listOfSpecies>
+    <listOfParameters>
+      <parameter constant="true" id="f1" value="0.65"/>
+      <parameter constant="true" id="f2" value="0.99"/>
+      <parameter constant="true" id="k1" units="ki" value="6.23"/>
+      <parameter constant="true" id="k2" units="ki" value="5.71"/>
+      <parameter constant="true" id="Kd1" units="mM" value="0.25"/>
+      <parameter constant="true" id="Kd2" units="mM" value="0.25"/>
+      <parameter constant="true" id="Ka1" units="mM" value="0.001"/>
+      <parameter constant="true" id="Ka2" units="mM" value="0.004"/>
+      <parameter constant="true" id="kdeg" units="mmol_mmolBM_d" value="0.242"/>
+      <parameter constant="true" id="aR1" units="perDay" value="0.2"/>
+      <parameter constant="true" id="aR2" units="perDay" value="0.2"/>
+      <parameter constant="true" id="BR1" units="perDay" value="0.8"/>
+      <parameter constant="true" id="BR2" units="perDay" value="0.8"/>
+      <parameter constant="true" id="BT1" units="perDay" value="0.8"/>
+      <parameter constant="true" id="BT2" units="perDay" value="0.8"/>
+      <parameter constant="true" id="BE1" units="perDay" value="0.8"/>
+      <parameter constant="true" id="BE2" units="perDay" value="0.8"/>
+      <parameter constant="true" id="kR1" units="perDay" value="2.84"/>
+      <parameter constant="true" id="kR2" units="perDay" value="1.03"/>
+      <parameter constant="true" id="kT1" units="perDay" value="0.13"/>
+      <parameter constant="true" id="kT2" units="perDay" value="0.25"/>
+      <parameter constant="true" id="kE1" units="perDay" value="1.84"/>
+      <parameter constant="true" id="kE2" units="perDay" value="1.56"/>
+      <parameter constant="true" id="KT1" units="perDay" value="0.25"/>
+      <parameter constant="true" id="KT2" units="perDay" value="0.25"/>
+      <parameter constant="true" id="KE1" value="0.25"/>
+      <parameter constant="true" id="KE2" value="0.25"/>
+      <parameter constant="false" id="r1kin" units="mM_Day"/>
+      <parameter constant="false" id="r2kin" units="mM_Day"/>
+      <parameter constant="false" id="rR1" units="perDay"/>
+      <parameter constant="false" id="rR2" units="perDay"/>
+      <parameter constant="false" id="rT1" units="perDay"/>
+      <parameter constant="false" id="rT2" units="perDay"/>
+      <parameter constant="false" id="rE1" units="perDay"/>
+      <parameter constant="false" id="rE2" units="perDay"/>
+      <parameter constant="false" id="u1"/>
+      <parameter constant="false" id="u2"/>
+      <parameter constant="false" id="r1" units="mM_Day"/>
+      <parameter constant="false" id="r2" units="mM_Day"/>
+    </listOfParameters>
+    <listOfRules>
+      <assignmentRule variable="r1kin">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> k1 </ci>
+                  <ci> cpd00055 </ci>
+                </apply>
+                <apply>
+                  <plus/>
+                  <ci> Kd1 </ci>
+                  <ci> cpd00055 </ci>
+                </apply>
+              </apply>
+              <ci> cpd00209 </ci>
+            </apply>
+            <apply>
+              <plus/>
+              <ci> Ka1 </ci>
+              <ci> cpd00209 </ci>
+            </apply>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="r2kin">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> k2 </ci>
+                  <ci> cpd00055 </ci>
+                </apply>
+                <apply>
+                  <plus/>
+                  <ci> Kd2 </ci>
+                  <ci> cpd00055 </ci>
+                </apply>
+              </apply>
+              <ci> cpd00075 </ci>
+            </apply>
+            <apply>
+              <plus/>
+              <ci> Ka2 </ci>
+              <ci> cpd00075 </ci>
+            </apply>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="u1">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <apply>
+            <divide/>
+            <ci> r1kin </ci>
+            <apply>
+              <plus/>
+              <ci> r1kin </ci>
+              <ci> r2kin </ci>
+            </apply>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="u2">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <apply>
+            <divide/>
+            <ci> r2kin </ci>
+            <apply>
+              <plus/>
+              <ci> r1kin </ci>
+              <ci> r2kin </ci>
+            </apply>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="rR1">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> kR1 </ci>
+                  <ci> cpd00055 </ci>
+                </apply>
+                <apply>
+                  <plus/>
+                  <ci> Kd1 </ci>
+                  <ci> cpd00055 </ci>
+                </apply>
+              </apply>
+              <ci> cpd00209 </ci>
+            </apply>
+            <apply>
+              <plus/>
+              <ci> Ka1 </ci>
+              <ci> cpd00209 </ci>
+            </apply>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="rR2">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> kR2 </ci>
+                  <ci> cpd00055 </ci>
+                </apply>
+                <apply>
+                  <plus/>
+                  <ci> Kd2 </ci>
+                  <ci> cpd00055 </ci>
+                </apply>
+              </apply>
+              <ci> cpd00075 </ci>
+            </apply>
+            <apply>
+              <plus/>
+              <ci> Ka2 </ci>
+              <ci> cpd00075 </ci>
+            </apply>
+          </apply>
+        </math>
+      </assignmentRule>
+      <rateRule variable="int1">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <apply>
+            <minus/>
+            <apply>
+              <plus/>
+              <ci> aR1 </ci>
+              <apply>
+                <times/>
+                <ci> u1 </ci>
+                <ci> rR1 </ci>
+              </apply>
+            </apply>
+            <apply>
+              <times/>
+              <ci> BR1 </ci>
+              <ci> int1 </ci>
+            </apply>
+          </apply>
+        </math>
+      </rateRule>
+      <rateRule variable="int2">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <apply>
+            <minus/>
+            <apply>
+              <plus/>
+              <ci> aR2 </ci>
+              <apply>
+                <times/>
+                <ci> u2 </ci>
+                <ci> rR2 </ci>
+              </apply>
+            </apply>
+            <apply>
+              <times/>
+              <ci> BR2 </ci>
+              <ci> int2 </ci>
+            </apply>
+          </apply>
+        </math>
+      </rateRule>
+      <assignmentRule variable="rT1">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <ci> kT1 </ci>
+              <ci> int1 </ci>
+            </apply>
+            <apply>
+              <plus/>
+              <ci> KT1 </ci>
+              <ci> int1 </ci>
+            </apply>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="rT2">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <ci> kT2 </ci>
+              <ci> int2 </ci>
+            </apply>
+            <apply>
+              <plus/>
+              <ci> KT2 </ci>
+              <ci> int2 </ci>
+            </apply>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="rE1">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> kE1 </ci>
+                  <ci> Trans1 </ci>
+                </apply>
+                <apply>
+                  <plus/>
+                  <ci> KE1 </ci>
+                  <ci> Trans1 </ci>
+                </apply>
+              </apply>
+              <ci> int1 </ci>
+            </apply>
+            <apply>
+              <plus/>
+              <ci> KE1 </ci>
+              <ci> int1 </ci>
+            </apply>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="rE2">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <apply>
+            <divide/>
+            <apply>
+              <times/>
+              <apply>
+                <divide/>
+                <apply>
+                  <times/>
+                  <ci> kE2 </ci>
+                  <ci> Trans2 </ci>
+                </apply>
+                <apply>
+                  <plus/>
+                  <ci> KE2 </ci>
+                  <ci> Trans2 </ci>
+                </apply>
+              </apply>
+              <ci> int2 </ci>
+            </apply>
+            <apply>
+              <plus/>
+              <ci> KE2 </ci>
+              <ci> int2 </ci>
+            </apply>
+          </apply>
+        </math>
+      </assignmentRule>
+      <rateRule variable="Trans1">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <apply>
+            <minus/>
+            <ci> rT1 </ci>
+            <apply>
+              <times/>
+              <ci> BT1 </ci>
+              <ci> Trans1 </ci>
+            </apply>
+          </apply>
+        </math>
+      </rateRule>
+      <rateRule variable="Trans2">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <apply>
+            <minus/>
+            <ci> rT2 </ci>
+            <apply>
+              <times/>
+              <ci> BT2 </ci>
+              <ci> Trans2 </ci>
+            </apply>
+          </apply>
+        </math>
+      </rateRule>
+      <rateRule variable="e1">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <apply>
+            <minus/>
+            <ci> rE1 </ci>
+            <apply>
+              <times/>
+              <ci> BE1 </ci>
+              <ci> e1 </ci>
+            </apply>
+          </apply>
+        </math>
+      </rateRule>
+      <rateRule variable="e2">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <apply>
+            <minus/>
+            <ci> rE2 </ci>
+            <apply>
+              <times/>
+              <ci> BE2 </ci>
+              <ci> e2 </ci>
+            </apply>
+          </apply>
+        </math>
+      </rateRule>
+      <assignmentRule variable="cpd00055">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <apply>
+            <times/>
+            <ci> e1 </ci>
+            <ci> r1kin </ci>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="r1">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <apply>
+            <times/>
+            <ci> e1 </ci>
+            <ci> r1kin </ci>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="r2">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <apply>
+            <times/>
+            <ci> e2 </ci>
+            <ci> r2kin </ci>
+          </apply>
+        </math>
+      </assignmentRule>
+      <rateRule variable="cpd11416">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <apply>
+            <minus/>
+            <apply>
+              <plus/>
+              <apply>
+                <times/>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <minus/>
+                    <cn type="integer"> 1 </cn>
+                    <ci> f1 </ci>
+                  </apply>
+                  <cn type="integer"> 5 </cn>
+                </apply>
+                <ci> r1 </ci>
+              </apply>
+              <apply>
+                <times/>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <minus/>
+                    <cn type="integer"> 1 </cn>
+                    <ci> f2 </ci>
+                  </apply>
+                  <cn type="integer"> 5 </cn>
+                </apply>
+                <ci> r2 </ci>
+              </apply>
+            </apply>
+            <apply>
+              <times/>
+              <ci> kdeg </ci>
+              <ci> cpd11416 </ci>
+            </apply>
+          </apply>
+        </math>
+      </rateRule>
+      <rateRule variable="cpd00055">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">        
+          <apply>
+            <plus/>
+            <apply>
+              <minus/>
+              <apply>
+                <minus/>
+                <ci> r1 </ci>
+              </apply>
+              <ci> r2 </ci>
+            </apply>
+            <apply>
+              <times/>
+              <apply>
+                <times/>
+                <cn type="integer"> 5 </cn>
+                <ci> kdeg </ci>
+              </apply>
+              <ci> cpd11416 </ci>
+            </apply>
+          </apply>
+        </math>
+      </rateRule>
+    </listOfRules>
+    <listOfReactions>
+      <reaction name="rxn1" id="rxn1" reversible="false">
+        <listOfReactants>
+          <speciesReference stoichiometry="1" constant="true" id="rxn1_CH2O" species="cpd00055_e"/>
+          <speciesReference stoichiometry="1.3" constant="true" id="rxn1_NO3" species="cpd00209_e"/>
+          <speciesReference stoichiometry="0.07" constant="true" id="rxn1_NH4" species="cpd00013_e"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference stoichiometry="1.3" constant="true" id="rxn1_NO2" species="cpd00075_e"/>
+          <speciesReference stoichiometry="0.65" constant="true" id="rxn1_CO2" species="cpd00011_e"/>
+          <speciesReference stoichiometry="0.07" constant="true" id="rxn1_bio" species="cpd11416_e"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <ci> r1 </ci>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction name="rxn2" id="rxn2" reversible="false">
+        <listOfReactants>
+          <speciesReference stoichiometry="1" constant="true" id="rxn2_CH2O" species="cpd00055_e"/>
+          <speciesReference stoichiometry="1.32" constant="true" id="rxn2_NO2" species="cpd00075_e"/>
+          <speciesReference stoichiometry="0.002" constant="true" id="rxn2_NH4" species="cpd00013_e"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference stoichiometry="0.66" constant="true" id="rxn2_N2" species="cpd00528_e"/>
+          <speciesReference stoichiometry="0.99" constant="true" id="rxn2_CO2" species="cpd00011_e"/>
+          <speciesReference stoichiometry="0.002" constant="true" id="rxn2_bio" species="cpd11416_e"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">          
+            <ci> r2 </ci>
+          </math>
+        </kineticLaw>
+      </reaction>
+    </listOfReactions>
+  </model>
+</sbml>
