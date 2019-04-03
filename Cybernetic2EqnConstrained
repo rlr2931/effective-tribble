@@ -1,5 +1,6 @@
-<?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<sbml xmlns="http://www.sbml.org/sbml/level3/version1/core" level="3" version="1">
+<?xml version="1.0" encoding="UTF-8"?>
+<sbml xmlns="http://www.sbml.org/sbml/level3/version1/core" level="3" version="1"
+    xmlns:fbc="http://www.sbml.org/sbml/level3/version1/fbc/version2" fbc:required="false">
   <model name="SongDenitrification" id="SongDenitrification">
     <listOfUnitDefinitions>
       <unitDefinition name="mmol_gDW_hr" id="kbase_flux">
@@ -544,7 +545,7 @@
       </rateRule>
     </listOfRules>
     <listOfReactions>
-      <reaction name="rxn1" id="rxn1" upperFluxBound="forward_bound" lowerFluxBound="zero_bound">
+      <reaction name="rxn1" id="rxn1" fbc:upperFluxBound="forward_bound" fbc:lowerFluxBound="zero_bound">
         <listOfReactants>
           <speciesReference stoichiometry="1" constant="true" id="rxn1_CH2O" species="cpd00055_e"/>
           <speciesReference stoichiometry="1.3" constant="true" id="rxn1_NO3" species="cpd00209_e"/>
@@ -561,7 +562,7 @@
           </math>
         </kineticLaw>
       </reaction>
-      <reaction name="rxn2" id="rxn2" upperFluxBound="forward_bound" lowerFluxBound="zero_bound">
+      <reaction name="rxn2" id="rxn2" fbc:upperFluxBound="forward_bound" fbc:lowerFluxBound="zero_bound">
         <listOfReactants>
           <speciesReference stoichiometry="1" constant="true" id="rxn2_CH2O" species="cpd00055_e"/>
           <speciesReference stoichiometry="1.32" constant="true" id="rxn2_NO2" species="cpd00075_e"/>
