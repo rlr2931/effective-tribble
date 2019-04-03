@@ -54,23 +54,23 @@
       <compartment id="cytosol"/>
     </listOfCompartments>
     <listOfSpecies>
-      <species compartment="extracellular" name="H2O_e" boundaryCondition="true" constant="false" id="cpd00001_e"/>
+      <species boundaryCondition="true" compartment="extracellular" name="H2O_e" id="cpd00001_e"/>
       <species boundaryCondition="false" constant="false" compartment="extracellular" name="CO2_e" id="cpd00011_e" initialConcentration="1"/>
-      <species compartment="extracellular" name="NH4_e" boundaryCondition="false" constant="false" id="cpd00013_e"/>
+      <species boundaryCondition="false" constant="false" compartment="extracellular" name="NH4_e" id="cpd00013_e"/>
       <species boundaryCondition="false" constant="false" compartment="extracellular" name="CH2O_e" id="cpd00055_e" initialConcentration="61.13"/>
       <species boundaryCondition="false" constant="false" compartment="extracellular" name="H+_e" id="cpd00067_e" initialConcentration="0.001"/>
       <species boundaryCondition="false" constant="false" compartment="extracellular" name="NO2_e" id="cpd00075_e" initialConcentration="0"/>
       <species boundaryCondition="false" constant="false" compartment="extracellular" name="NO3_e" id="cpd00209_e" initialConcentration="18.25"/>
       <species boundaryCondition="false" constant="false" compartment="extracellular" name="N2_e" id="cpd00528_e" initialConcentration="0"/>
       <species boundaryCondition="false" constant="false" compartment="extracellular" name="Biomass" id="cpd11416_e" initialConcentration="0.1"/>
-      <species compartment="cytosol" name="H2O_c" boundaryCondition="true" constant="false" id="cpd00001_c"/>
-      <species compartment="extracellular" name="CO2_c" boundaryCondition="false" constant="false" id="cpd00011_c"/>
-      <species compartment="cytosol" name="NH4_c" boundaryCondition="false" constant="false" id="cpd00013_c"/>
-      <species compartment="cytosol" name="CH2O_c" boundaryCondition="false" constant="false" id="cpd00055_c"/>
-      <species compartment="cytosol" name="H+_c" boundaryCondition="false" constant="false" id="cpd00067_c"/>
-      <species compartment="cytosol" name="NO2_c" boundaryCondition="false" constant="false" id="cpd00075_c"/>
-      <species compartment="cytosol" name="NO3_c" boundaryCondition="false" constant="false" id="cpd00209_c"/>
-      <species compartment="cytosol" name="N2_c" boundaryCondition="false" constant="false" id="cpd00528_c"/>
+      <species boundaryCondition="true" constant="false" compartment="cytosol" name="H2O_c" id="cpd00001_c"/>
+      <species boundaryCondition="false" constant="false" compartment="extracellular" name="CO2_c" id="cpd00011_c"/>
+      <species boundaryCondition="false" constant="false" compartment="cytosol" name="NH4_c" id="cpd00013_c"/>
+      <species boundaryCondition="false" constant="false" compartment="cytosol" name="CH2O_c" id="cpd00055_c"/>
+      <species boundaryCondition="false" constant="false" compartment="cytosol" name="H+_c" id="cpd00067_c"/>
+      <species boundaryCondition="false" constant="false" compartment="cytosol" name="NO2_c" id="cpd00075_c"/>
+      <species boundaryCondition="false" constant="false" compartment="cytosol" name="NO3_c" id="cpd00209_c"/>
+      <species boundaryCondition="false" constant="false" compartment="cytosol" name="N2_c" id="cpd00528_c"/>
       <species boundaryCondition="false" constant="false" compartment="cytosol" name="InternalResource1_c" id="int1_c" initialConcentration="0.001"/>
       <species boundaryCondition="false" constant="false" compartment="cytosol" name="InternalResource2_c" id="int2_c" initialConcentration="0.001"/>
       <species boundaryCondition="false" constant="false" compartment="cytosol" name="Transcript1_c" id="Trans1_c" initialConcentration="0.001"/>
@@ -544,7 +544,7 @@
       </rateRule>
     </listOfRules>
     <listOfReactions>
-      <reaction name="rxn1" id="rxn1" fbc:upperFluxBound="forward_bound" fbc:lowerFluxBound="zero_bound">
+      <reaction name="rxn1" id="rxn1" upperFluxBound="forward_bound" lowerFluxBound="zero_bound">
         <listOfReactants>
           <speciesReference stoichiometry="1" constant="true" id="rxn1_CH2O" species="cpd00055_e"/>
           <speciesReference stoichiometry="1.3" constant="true" id="rxn1_NO3" species="cpd00209_e"/>
@@ -561,7 +561,7 @@
           </math>
         </kineticLaw>
       </reaction>
-      <reaction name="rxn2" id="rxn2" fbc:upperFluxBound="forward_bound" fbc:lowerFluxBound="zero_bound">
+      <reaction name="rxn2" id="rxn2" upperFluxBound="forward_bound" lowerFluxBound="zero_bound">
         <listOfReactants>
           <speciesReference stoichiometry="1" constant="true" id="rxn2_CH2O" species="cpd00055_e"/>
           <speciesReference stoichiometry="1.32" constant="true" id="rxn2_NO2" species="cpd00075_e"/>
