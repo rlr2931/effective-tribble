@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sbml xmlns="http://www.sbml.org/sbml/level3/version1/core" xmlns:fbc="http://www.sbml.org/sbml/level3/version1/fbc/version2" sboTerm="SBO:0000624" level="3" version="1" fbc:required="false">
+  <model metaid="meta_RSCM_Denitrification" id="RSCM_Denitrification" fbc:strict="true">
+    <listOfUnitDefinitions>
+      <unitDefinition id="mmol_per_gDW_per_hr">
+        <listOfUnits>
+          <unit kind="mole" exponent="1" scale="-3" multiplier="1"/>
+          <unit kind="gram" exponent="-1" scale="0" multiplier="1"/>
+          <unit kind="second" exponent="-1" scale="0" multiplier="3600"/>
+        </listOfUnits>
+      </unitDefinition>
+    </listOfUnitDefinitions>
+    <listOfCompartments>
+      <compartment id="e" constant="true"/>
+    </listOfCompartments>
+    <listOfSpecies>
+      <species id="M_cpd00055_e" name="DOC_e" compartment="e" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="CH2O"/>
+      <species id="M_cpd00209_e" name="NO3_e" compartment="e" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="NO3"/>
+      <species id="M_cpd00013_e" name="NH4_e" compartment="e" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="NH4"/>
+      <species id="M_cpd00075_e" name="NO2_e" compartment="e" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="NO2"/>
+      <species id="M_cpd00011_e" name="DIC_e" compartment="e" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="CO2"/>
+      <species id="M_cpd11416_e" name="Biomass_e" compartment="e" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="C5H7O2N"/>
+      <species id="M_cpd00528_e" name="N2_e" compartment="e" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="N2"/>
+    </listOfSpecies>
+    <listOfParameters>
+      <parameter sboTerm="SBO:0000626" id="cobra_default_lb" value="0" constant="true"/>
+      <parameter sboTerm="SBO:0000626" id="cobra_default_ub" value="1000" constant="true"/>
+      <parameter sboTerm="SBO:0000626" id="cobra_0_bound" value="0" constant="true"/>
+      <parameter sboTerm="SBO:0000625" id="minus_inf" value="-INF" constant="true"/>
+      <parameter sboTerm="SBO:0000625" id="plus_inf" value="INF" constant="true"/>
+    </listOfParameters>
+    <listOfReactions>
+      <reaction id="R_rxn1" name="Reaction 1" reversible="false" fast="false" fbc:lowerFluxBound="cobra_0_bound" fbc:upperFluxBound="cobra_default_ub">
+        <listOfReactants>
+          <speciesReference species="M_cpd00055_e" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_cpd00209_e" stoichiometry="1.12" constant="true"/>
+          <speciesReference species="M_cpd00013_e" stoichiometry="0.088" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_cpd00075_e" stoichiometry="1.12" constant="true"/>
+          <speciesReference species="M_cpd00011_e" stoichiometry="0.56" constant="true"/>
+          <speciesReference species="M_cpd11416_e" stoichiometry="0.088" constant="true"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="R_rxn2" name="Reaction 2" reversible="false" fast="false" fbc:lowerFluxBound="cobra_0_bound" fbc:upperFluxBound="cobra_default_ub">
+        <listOfReactants>
+          <speciesReference species="M_cpd00055_e" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_cpd00075_e" stoichiometry="1.32" constant="true"/>
+          <speciesReference species="M_cpd00013_e" stoichiometry="0.002" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_cpd00528_e" stoichiometry="0.66" constant="true"/>
+          <speciesReference species="M_cpd00011_e" stoichiometry="0.99" constant="true"/>
+          <speciesReference species="M_cpd11416_e" stoichiometry="0.002" constant="true"/>
+        </listOfProducts>
+      </reaction>
+    </listOfReactions>
+    <fbc:listOfObjectives fbc:activeObjective="obj">
+      <fbc:objective fbc:id="obj" fbc:type="maximize">
+        <fbc:listOfFluxObjectives>
+          <fbc:fluxObjective fbc:reaction="R_rxn1" fbc:coefficient="1"/>
+        </fbc:listOfFluxObjectives>
+      </fbc:objective>
+    </fbc:listOfObjectives>
+  </model>
+</sbml>
