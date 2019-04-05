@@ -12,7 +12,6 @@
     </listOfUnitDefinitions>
     <listOfCompartments>
       <compartment id="e" constant="true"/>
-      <compartment id="c" constant="true"/>
     </listOfCompartments>
     <listOfSpecies>
       <species id="M_cpd00055_e" name="DOC_e" compartment="e" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="CH2O"/>
@@ -26,17 +25,6 @@
       <species id="M_cpd00528_e" name="N2_e" compartment="e" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="N2"/>
       <species id="M_cpd00013_e" name="NH4_e" compartment="e" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="NH4"/>
       <species id="M_cpd11416_e" name="Biomass_e" compartment="e" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="C5H7O2N"/>
-      <species id="M_cpd00001_c" name="H2O_c" compartment="c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="H2O"/>
-      <species id="M_cpd00011_c" name="DIC_c" compartment="c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="CO2"/>
-      <species id="M_cpd00013_c" name="NH4_c" compartment="c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="NH4"/>
-      <species id="M_cpd00055_c" name="DOC_c" compartment="c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="CH2O"/>
-      <species id="M_cpd00067_c" name="H_c" compartment="c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="H"/>
-      <species id="M_cpd00075_c" name="NO2_c" compartment="c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="NO2"/>
-      <species id="M_cpd00209_c" name="NO3_c" compartment="c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="NO3"/>
-      <species id="M_cpd00418_c" name="NO_c" compartment="c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="NO"/>
-      <species id="M_cpd00528_c" name="N2_c" compartment="c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="N2"/>
-      <species id="M_cpd00659_c" name="N2O_c" compartment="c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="N2O"/>
-      <species id="M_cpd11416_c" name="Biomass_c" compartment="c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="C5H7O2N"/>
     </listOfSpecies>
     <listOfParameters>
       <parameter sboTerm="SBO:0000626" id="cobra_default_lb" value="0" constant="true"/>
