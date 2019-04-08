@@ -11,31 +11,31 @@
       </unitDefinition>
     </listOfUnitDefinitions>
     <listOfCompartments>
-      <compartment id="e" constant="true"/>
       <compartment id="c" constant="true"/>
+      <compartment id="e" constant="true"/>
     </listOfCompartments>
     <listOfSpecies>
-      <species id="M_cpd00055_e" name="DOC_e" compartment="e" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="CH2O"/>
-      <species id="M_cpd00209_e" name="NO3_e" compartment="e" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="NO3"/>
-      <species id="M_cpd00075_e" name="NO2_e" compartment="e" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="NO2"/>
-      <species id="M_cpd00011_e" name="DIC_e" compartment="e" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="CO2"/>
-      <species id="M_cpd00001_e" name="H2O_e" compartment="e" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="H2O"/>
-      <species id="M_cpd00067_e" name="H_e" compartment="e" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="H"/>
-      <species id="M_cpd00418_e" name="NO_e" compartment="e" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="NO"/>
-      <species id="M_cpd00659_e" name="N2O_e" compartment="e" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="N2O"/>
-      <species id="M_cpd00528_e" name="N2_e" compartment="e" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="N2"/>
-      <species id="M_cpd00013_e" name="NH4_e" compartment="e" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="NH4"/>
-      <species id="M_cpd11416_e" name="Biomass_e" compartment="e" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="C5H7O2N"/>
       <species id="M_cpd00055_c" name="DOC_c" compartment="c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="CH2O"/>
       <species id="M_cpd00209_c" name="NO3_c" compartment="c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="NO3"/>
       <species id="M_cpd00075_c" name="NO2_c" compartment="c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="NO2"/>
       <species id="M_cpd00011_c" name="DIC_c" compartment="c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="CO2"/>
-      <species id="M_cpd00067_c" name="H_c" compartment="c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="H"/>
       <species id="M_cpd00001_c" name="H2O_c" compartment="c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="H2O"/>
-      <species id="M_cpd00528_c" name="N2_c" compartment="c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="N2"/>
-      <species id="M_cpd00013_c" name="NH4_c" compartment="c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="NH4"/>
+      <species id="M_cpd00067_c" name="H_c" compartment="c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="H"/>
       <species id="M_cpd00418_c" name="NO_c" compartment="c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="NO"/>
       <species id="M_cpd00659_c" name="N2O_c" compartment="c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="N2O"/>
+      <species id="M_cpd00528_c" name="N2_c" compartment="c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="N2"/>
+      <species id="M_cpd00013_c" name="NH4_c" compartment="c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="NH4"/>
+      <species id="M_biomass_c" name="Biomass_c" compartment="c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="C5H7O2N"/>
+      <species id="M_cpd00055_e" name="DOC_e" compartment="e" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="CH2O"/>
+      <species id="M_cpd00209_e" name="NO3_e" compartment="e" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="NO3"/>
+      <species id="M_cpd00075_e" name="NO2_e" compartment="e" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="NO2"/>
+      <species id="M_cpd00011_e" name="DIC_e" compartment="e" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="CO2"/>
+      <species id="M_cpd00067_e" name="H_e" compartment="e" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="H"/>
+      <species id="M_cpd00001_e" name="H2O_e" compartment="e" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="H2O"/>
+      <species id="M_cpd00528_e" name="N2_e" compartment="e" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="N2"/>
+      <species id="M_cpd00013_e" name="NH4_e" compartment="e" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="NH4"/>
+      <species id="M_cpd00418_e" name="NO_e" compartment="e" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="NO"/>
+      <species id="M_cpd00659_e" name="N2O_e" compartment="e" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:chemicalFormula="N2O"/>
     </listOfSpecies>
     <listOfParameters>
       <parameter sboTerm="SBO:0000626" id="cobra_default_lb" value="-1000" constant="true"/>
@@ -47,58 +47,58 @@
     <listOfReactions>
       <reaction id="R_rxn1" name="Reaction 1" reversible="false" fast="false" fbc:lowerFluxBound="cobra_0_bound" fbc:upperFluxBound="cobra_default_ub">
         <listOfReactants>
-          <speciesReference species="M_cpd00055_e" stoichiometry="1" constant="true"/>
-          <speciesReference species="M_cpd00209_e" stoichiometry="2" constant="true"/>
+          <speciesReference species="M_cpd00055_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_cpd00209_c" stoichiometry="2" constant="true"/>
         </listOfReactants>
         <listOfProducts>
-          <speciesReference species="M_cpd00075_e" stoichiometry="2" constant="true"/>
-          <speciesReference species="M_cpd00011_e" stoichiometry="1" constant="true"/>
-          <speciesReference species="M_cpd00001_e" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_cpd00075_c" stoichiometry="2" constant="true"/>
+          <speciesReference species="M_cpd00011_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_cpd00001_c" stoichiometry="1" constant="true"/>
         </listOfProducts>
       </reaction>
       <reaction id="R_rxn2" name="Reaction 2" reversible="false" fast="false" fbc:lowerFluxBound="cobra_0_bound" fbc:upperFluxBound="cobra_default_ub">
         <listOfReactants>
-          <speciesReference species="M_cpd00067_e" stoichiometry="4" constant="true"/>
-          <speciesReference species="M_cpd00055_e" stoichiometry="1" constant="true"/>
-          <speciesReference species="M_cpd00075_e" stoichiometry="4" constant="true"/>
+          <speciesReference species="M_cpd00067_c" stoichiometry="4" constant="true"/>
+          <speciesReference species="M_cpd00055_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_cpd00075_c" stoichiometry="4" constant="true"/>
         </listOfReactants>
         <listOfProducts>
-          <speciesReference species="M_cpd00418_e" stoichiometry="4" constant="true"/>
-          <speciesReference species="M_cpd00011_e" stoichiometry="1" constant="true"/>
-          <speciesReference species="M_cpd00001_e" stoichiometry="3" constant="true"/>
+          <speciesReference species="M_cpd00418_c" stoichiometry="4" constant="true"/>
+          <speciesReference species="M_cpd00011_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_cpd00001_c" stoichiometry="3" constant="true"/>
         </listOfProducts>
       </reaction>
       <reaction id="R_rxn3" name="Reaction 3" reversible="false" fast="false" fbc:lowerFluxBound="cobra_0_bound" fbc:upperFluxBound="cobra_default_ub">
         <listOfReactants>
-          <speciesReference species="M_cpd00055_e" stoichiometry="1" constant="true"/>
-          <speciesReference species="M_cpd00418_e" stoichiometry="4" constant="true"/>
+          <speciesReference species="M_cpd00055_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_cpd00418_c" stoichiometry="4" constant="true"/>
         </listOfReactants>
         <listOfProducts>
-          <speciesReference species="M_cpd00659_e" stoichiometry="2" constant="true"/>
-          <speciesReference species="M_cpd00011_e" stoichiometry="1" constant="true"/>
-          <speciesReference species="M_cpd00001_e" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_cpd00659_c" stoichiometry="2" constant="true"/>
+          <speciesReference species="M_cpd00011_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_cpd00001_c" stoichiometry="1" constant="true"/>
         </listOfProducts>
       </reaction>
       <reaction id="R_rxn4" name="Reaction 4" reversible="false" fast="false" fbc:lowerFluxBound="cobra_0_bound" fbc:upperFluxBound="cobra_default_ub">
         <listOfReactants>
-          <speciesReference species="M_cpd00055_e" stoichiometry="1" constant="true"/>
-          <speciesReference species="M_cpd00659_e" stoichiometry="2" constant="true"/>
+          <speciesReference species="M_cpd00055_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_cpd00659_c" stoichiometry="2" constant="true"/>
         </listOfReactants>
         <listOfProducts>
-          <speciesReference species="M_cpd00528_e" stoichiometry="2" constant="true"/>
-          <speciesReference species="M_cpd00011_e" stoichiometry="1" constant="true"/>
-          <speciesReference species="M_cpd00001_e" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_cpd00528_c" stoichiometry="2" constant="true"/>
+          <speciesReference species="M_cpd00011_c" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_cpd00001_c" stoichiometry="1" constant="true"/>
         </listOfProducts>
       </reaction>
       <reaction id="R_bio1" name="Biomass Reaction" reversible="false" fast="false" fbc:lowerFluxBound="cobra_0_bound" fbc:upperFluxBound="cobra_default_ub">
         <listOfReactants>
-          <speciesReference species="M_cpd00013_e" stoichiometry="0.2" constant="true"/>
-          <speciesReference species="M_cpd00055_e" stoichiometry="1" constant="true"/>
+          <speciesReference species="M_cpd00013_c" stoichiometry="0.2" constant="true"/>
+          <speciesReference species="M_cpd00055_c" stoichiometry="1" constant="true"/>
         </listOfReactants>
         <listOfProducts>
-          <speciesReference species="M_cpd11416_e" stoichiometry="0.2" constant="true"/>
-          <speciesReference species="M_cpd00001_e" stoichiometry="0.6" constant="true"/>
-          <speciesReference species="M_cpd00067_e" stoichiometry="0.2" constant="true"/>
+          <speciesReference species="M_biomass_c" stoichiometry="0.2" constant="true"/>
+          <speciesReference species="M_cpd00001_c" stoichiometry="0.6" constant="true"/>
+          <speciesReference species="M_cpd00067_c" stoichiometry="0.2" constant="true"/>
         </listOfProducts>
       </reaction>
       <reaction id="R_exch1" name="DOC Exchange" reversible="true" fast="false" fbc:lowerFluxBound="cobra_default_lb" fbc:upperFluxBound="cobra_default_ub">
