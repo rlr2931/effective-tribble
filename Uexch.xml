@@ -11,24 +11,32 @@
       </unitDefinition>
     </listOfUnitDefinitions>
     <listOfCompartments>
+      <compartment id="c" constant="true"/>
       <compartment id="e" constant="true"/>
     </listOfCompartments>
     <listOfSpecies>
-      <species id="M_Acetate_e" name="Acetate_e" compartment="e" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="-1" fbc:chemicalFormula="CH3COO"/>
-      <species id="M_Goethite_e" name="Goethite_e" compartment="e" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0" fbc:chemicalFormula="FeOOH"/>
       <species id="M_Hydrogen_e" name="H_e" compartment="e" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="1" fbc:chemicalFormula="H"/>
       <species id="M_Ammonium_e" name="Ammonium_e" compartment="e" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="1" fbc:chemicalFormula="NH4"/>
-      <species id="M_IronBiomass_e" name="IronBiomass_e" compartment="e" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0" fbc:chemicalFormula="C5H7O2N"/>
       <species id="M_Iron2_e" name="Iron2_e" compartment="e" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="2" fbc:chemicalFormula="Fe"/>
       <species id="M_Water_e" name="Water_e" compartment="e" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0" fbc:chemicalFormula="H2O"/>
+      <species id="M_Acetate_e" name="Acetate_e" compartment="e" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="-1" fbc:chemicalFormula="CH3COO"/>
+      <species id="M_IronBiomass_e" name="IronBiomass_e" compartment="e" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0" fbc:chemicalFormula="C5H7O2N"/>
+      <species id="M_Goethite_e" name="Goethite_e" compartment="e" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0" fbc:chemicalFormula="FeOOH"/>
       <species id="M_UraniumOxideAq_e" name="UraniumOxideAq_e" compartment="e" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="2" fbc:chemicalFormula="UO2"/>
       <species id="M_UraniumOxideS_e" name="UraniumOxideS_e" compartment="e" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0" fbc:chemicalFormula="UO2"/>
+      <species id="M_Sulfanide_e" name="Sulfanie_e" compartment="e" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="-1" fbc:chemicalFormula="HS"/>
       <species id="M_Sulfate_e" name="Sulfate_e" compartment="e" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="-2" fbc:chemicalFormula="SO4"/>
       <species id="M_SulfateBiomass_e" name="SulfateBiomass_e" compartment="e" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0" fbc:chemicalFormula="C5H7O2N"/>
-      <species id="M_Sulfanide_e" name="Sulfanie_e" compartment="e" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="-1" fbc:chemicalFormula="HS"/>
+      <species id="M_Acetate_c" name="Acetate_c" compartment="c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="-1" fbc:chemicalFormula="CH3COO"/>
+      <species id="M_Hydrogen_c" name="H_c" compartment="c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="1" fbc:chemicalFormula="H"/>
+      <species id="M_Ammonium_c" name="Ammonium_c" compartment="c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="1" fbc:chemicalFormula="NH4"/>
+      <species id="M_Iron2_c" name="Iron2_c" compartment="c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="2" fbc:chemicalFormula="Fe"/>
+      <species id="M_Water_c" name="Water_c" compartment="c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="0" fbc:chemicalFormula="H2O"/>
+      <species id="M_Sulfate_c" name="Sulfate_c" compartment="c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="-2" fbc:chemicalFormula="SO4"/>
+      <species id="M_Sulfanide_c" name="Sulfanide_c" compartment="c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false" fbc:charge="-1" fbc:chemicalFormula="HS"/>
     </listOfSpecies>
     <listOfParameters>
-      <parameter sboTerm="SBO:0000626" id="cobra_default_lb" value="0" constant="true"/>
+      <parameter sboTerm="SBO:0000626" id="cobra_default_lb" value="-1000" constant="true"/>
       <parameter sboTerm="SBO:0000626" id="cobra_default_ub" value="1000" constant="true"/>
       <parameter sboTerm="SBO:0000626" id="cobra_0_bound" value="0" constant="true"/>
       <parameter sboTerm="SBO:0000625" id="minus_inf" value="-INF" constant="true"/>
@@ -37,43 +45,107 @@
     <listOfReactions>
       <reaction id="R_rxn1" name="Iron Reaction" reversible="false" fast="false" fbc:lowerFluxBound="cobra_0_bound" fbc:upperFluxBound="cobra_default_ub">
         <listOfReactants>
-          <speciesReference species="M_Acetate_e" stoichiometry="0.125" constant="true"/>
-          <speciesReference species="M_Goethite_e" stoichiometry="0.6" constant="true"/>
           <speciesReference species="M_Hydrogen_e" stoichiometry="1.155" constant="true"/>
           <speciesReference species="M_Ammonium_e" stoichiometry="0.02" constant="true"/>
+          <speciesReference species="M_Acetate_e" stoichiometry="0.125" constant="true"/>
+          <speciesReference species="M_Goethite_e" stoichiometry="0.6" constant="true"/>
         </listOfReactants>
         <listOfProducts>
-          <speciesReference species="M_IronBiomass_e" stoichiometry="0.02" constant="true"/>
           <speciesReference species="M_Iron2_e" stoichiometry="0.15" constant="true"/>
           <speciesReference species="M_Water_e" stoichiometry="0.96" constant="true"/>
+          <speciesReference species="M_IronBiomass_e" stoichiometry="0.02" constant="true"/>
         </listOfProducts>
       </reaction>
       <reaction id="R_rxn2" name="Uranium Reaction" reversible="false" fast="false" fbc:lowerFluxBound="cobra_0_bound" fbc:upperFluxBound="cobra_default_ub">
         <listOfReactants>
-          <speciesReference species="M_UraniumOxideAq_e" stoichiometry="0.775" constant="true"/>
+          <speciesReference species="M_Ammonium_e" stoichiometry="0.0113" constant="true"/>
           <speciesReference species="M_Acetate_e" stoichiometry="0.125" constant="true"/>
           <speciesReference species="M_Water_e" stoichiometry="0.3538" constant="true"/>
-          <speciesReference species="M_Ammonium_e" stoichiometry="0.0113" constant="true"/>
+          <speciesReference species="M_UraniumOxideAq_e" stoichiometry="0.775" constant="true"/>
         </listOfReactants>
         <listOfProducts>
-          <speciesReference species="M_UraniumOxideS_e" stoichiometry="0.775" constant="true"/>
-          <speciesReference species="M_IronBiomass_e" stoichiometry="0.0113" constant="true"/>
           <speciesReference species="M_Hydrogen_e" stoichiometry="0.855" constant="true"/>
           <speciesReference species="M_Iron2_e" stoichiometry="0.1938" constant="true"/>
+          <speciesReference species="M_IronBiomass_e" stoichiometry="0.0113" constant="true"/>
+          <speciesReference species="M_UraniumOxideS_e" stoichiometry="0.775" constant="true"/>
         </listOfProducts>
       </reaction>
       <reaction id="R_rxn3" name="Sulfate Reaction" reversible="false" fast="false" fbc:lowerFluxBound="cobra_0_bound" fbc:upperFluxBound="cobra_default_ub">
         <listOfReactants>
-          <speciesReference species="M_Sulfate_e" stoichiometry="0.1155" constant="true"/>
-          <speciesReference species="M_Acetate_e" stoichiometry="0.125" constant="true"/>
-          <speciesReference species="M_Hydrogen_e" stoichiometry="0.0057" constant="true"/>
           <speciesReference species="M_Ammonium_e" stoichiometry="0.0038" constant="true"/>
+          <speciesReference species="M_Hydrogen_e" stoichiometry="0.0057" constant="true"/>
+          <speciesReference species="M_Acetate_e" stoichiometry="0.125" constant="true"/>
+          <speciesReference species="M_Sulfate_e" stoichiometry="0.1155" constant="true"/>
         </listOfReactants>
         <listOfProducts>
-          <speciesReference species="M_SulfateBiomass_e" stoichiometry="0.0038" constant="true"/>
           <speciesReference species="M_Sulfanide_e" stoichiometry="0.1155" constant="true"/>
           <speciesReference species="M_Water_e" stoichiometry="0.114" constant="true"/>
           <speciesReference species="M_Iron2_e" stoichiometry="0.231" constant="true"/>
+          <speciesReference species="M_SulfateBiomass_e" stoichiometry="0.0038" constant="true"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="R_acetatex" name="Acetate Exchange" reversible="true" fast="false" fbc:lowerFluxBound="cobra_default_lb" fbc:upperFluxBound="cobra_default_ub">
+        <listOfReactants>
+          <speciesReference species="M_Acetate_e" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_Acetate_c" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="R_hydrogenx" name="Hydrogen Exchange" reversible="true" fast="false" fbc:lowerFluxBound="cobra_default_lb" fbc:upperFluxBound="cobra_default_ub">
+        <listOfReactants>
+          <speciesReference species="M_Hydrogen_e" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_Hydrogen_c" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="R_ammoniumx" name="Ammonium Exchange" reversible="true" fast="false" fbc:lowerFluxBound="cobra_default_lb" fbc:upperFluxBound="cobra_default_ub">
+        <listOfReactants>
+          <speciesReference species="M_Ammonium_e" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_Ammonium_c" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="R_iron2x" name="Iron2 Exchange" reversible="true" fast="false" fbc:lowerFluxBound="cobra_default_lb" fbc:upperFluxBound="cobra_default_ub">
+        <listOfReactants>
+          <speciesReference species="M_Iron2_e" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_Iron2_c" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="R_waterx" name="Water Exchange" reversible="true" fast="false" fbc:lowerFluxBound="cobra_default_lb" fbc:upperFluxBound="cobra_default_ub">
+        <listOfReactants>
+          <speciesReference species="M_Water_e" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_Water_c" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="R_bicarbx" name="Bicarbonate Exchange" reversible="true" fast="false" fbc:lowerFluxBound="cobra_default_lb" fbc:upperFluxBound="cobra_default_ub">
+        <listOfReactants>
+          <speciesReference species="M_Iron2_e" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_Iron2_c" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="R_sulfatex" name="Sulfate Exchange" reversible="true" fast="false" fbc:lowerFluxBound="cobra_default_lb" fbc:upperFluxBound="cobra_default_ub">
+        <listOfReactants>
+          <speciesReference species="M_Sulfate_e" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_Sulfate_c" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="R_sulfanidex" name="Sulfanide Exchange" reversible="true" fast="false" fbc:lowerFluxBound="cobra_default_lb" fbc:upperFluxBound="cobra_default_ub">
+        <listOfReactants>
+          <speciesReference species="M_Sulfanide_e" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="M_Sulfanide_c" stoichiometry="1" constant="true"/>
         </listOfProducts>
       </reaction>
     </listOfReactions>
