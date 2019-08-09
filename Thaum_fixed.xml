@@ -276,24 +276,6 @@
           </body>
         </notes>
       </species>
-      <species id="M_cpd00067_c" name="H+" compartment="c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
-        <notes>
-          <body xmlns="http://www.w3.org/1999/xhtml">
-            <p>FORMULA: H</p>
-            <p>KEGGID: C00080</p>
-            <p>CHARGE: 1</p>
-          </body>
-        </notes>
-      </species>
-      <species id="M_cpd00067_e" name="H+" compartment="e" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
-        <notes>
-          <body xmlns="http://www.w3.org/1999/xhtml">
-            <p>FORMULA: H</p>
-            <p>KEGGID: C00080</p>
-            <p>CHARGE: 1</p>
-          </body>
-        </notes>
-      </species>
       <species id="M_cpd00830_c" name="4-Hydroxy-2-oxoglutarate" compartment="c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
         <notes>
           <body xmlns="http://www.w3.org/1999/xhtml">
@@ -327,15 +309,6 @@
             <p>FORMULA: C10H12N5O13P2S</p>
             <p>KEGGID: C00053</p>
             <p>CHARGE: -3</p>
-          </body>
-        </notes>
-      </species>
-      <species id="M_cpd00048_c" name="Sulfate" compartment="c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
-        <notes>
-          <body xmlns="http://www.w3.org/1999/xhtml">
-            <p>FORMULA: O4S</p>
-            <p>KEGGID: C00059</p>
-            <p>CHARGE: -2</p>
           </body>
         </notes>
       </species>
@@ -699,15 +672,6 @@
           </body>
         </notes>
       </species>
-      <species id="M_cpd00010_c" name="CoA" compartment="c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
-        <notes>
-          <body xmlns="http://www.w3.org/1999/xhtml">
-            <p>FORMULA: C21H33N7O16P3S</p>
-            <p>KEGGID: C00010</p>
-            <p>CHARGE: -3</p>
-          </body>
-        </notes>
-      </species>
       <species id="M_cpd00822_c" name="O-Succinyl-L-homoserine" compartment="c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
         <notes>
           <body xmlns="http://www.w3.org/1999/xhtml">
@@ -912,15 +876,6 @@
             <p>FORMULA: C42H38N4O16</p>
             <p>KEGGID: C05778</p>
             <p>CHARGE: -8</p>
-          </body>
-        </notes>
-      </species>
-      <species id="M_cpd00149_c" name="Co2+" compartment="c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
-        <notes>
-          <body xmlns="http://www.w3.org/1999/xhtml">
-            <p>FORMULA: Co</p>
-            <p>KEGGID: C00175</p>
-            <p>CHARGE: 2</p>
           </body>
         </notes>
       </species>
@@ -6506,15 +6461,6 @@
           <body xmlns="http://www.w3.org/1999/xhtml">
             <p>FORMULA: </p>
             <p>CHARGE: 0</p>
-          </body>
-        </notes>
-      </species>
-      <species id="M_cpd00659_c" name="Nitrous oxide" compartment="c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
-        <notes>
-          <body xmlns="http://www.w3.org/1999/xhtml">
-            <p>FORMULA: HN2O</p>
-            <p>KEGGID: C00887</p>
-            <p>CHARGE: NaN</p>
           </body>
         </notes>
       </species>
@@ -30876,7 +30822,7 @@
           </body>
         </notes>
         <listOfReactants>
-          <speciesReference species="M_cpd00011_eX" stoichiometry="1"/>
+          <speciesReference species="M_cpd00011_e" stoichiometry="1"/>
         </listOfReactants>
         <listOfProducts>
           <speciesReference species="M_cpd00011_c" stoichiometry="1"/>
