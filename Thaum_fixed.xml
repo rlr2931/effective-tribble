@@ -30716,7 +30716,6 @@
           </listOfParameters>
         </kineticLaw>
       </reaction>
-      </reaction>
       <reaction id="R_rxn05493" reversible="false">
         <notes>
           <body xmlns="http://www.w3.org/1999/xhtml">
