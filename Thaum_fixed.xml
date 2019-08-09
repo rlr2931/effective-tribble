@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sbml level="2" version="1" xmlns="http://www.sbml.org/sbml/level2">
-  <model>
+  <model id="Thaumarchaeota_AOB">
     <listOfUnitDefinitions>
       <unitDefinition id="mmol_per_gDW_per_hr">
         <listOfUnits>
