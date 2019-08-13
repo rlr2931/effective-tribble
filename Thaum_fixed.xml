@@ -1302,6 +1302,15 @@
           </body>
         </notes>
       </species>
+      <species id="M_cpd10516_e" name="fe3" compartment="e" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <p>FORMULA: Fe</p>
+            <p>KEGGID: C14819</p>
+            <p>CHARGE: 3</p>
+          </body>
+        </notes>
+      </species>
       <species id="M_cpd00110_c" name="Cytochrome c2+" compartment="c" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false">
         <notes>
           <body xmlns="http://www.w3.org/1999/xhtml">
